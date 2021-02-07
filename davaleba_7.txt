@@ -1,0 +1,24 @@
+CREATE TABLE Teacher (
+    Pk_TeacherID INT IDENTITY PRIMARY KEY,
+	Fk_PupilID INT UNIQUE FOREIGN KEY REFERENCES Teacher(Pk_PupilID)
+    Name varchar (255),
+    Surname varchar (255),
+    Sex varchar (255),
+    Subject varchar(255)
+);
+CREATE TABLE Pupil (
+    Pk_PupilID INT IDENTITY PRIMARY KEY,
+	Fk_TeacherID INT UNIQUE FOREIGN KEY REFERENCES Teacher(Pk_TeacherID)
+    Name varchar (255),
+    Surname varchar (255),
+    Sex varchar (255),
+    class varchar(255)
+);
+
+SELECT
+name 
+Fk_TeacherID
+FROM
+Pupil
+WHERE Name = "giorgi"
+ORDER BY Fk_TeacherID
